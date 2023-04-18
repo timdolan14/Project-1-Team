@@ -70,4 +70,7 @@
     top: 100%;
    
 }
-
+#login, li{
+    padding-right: 40px;
+    float:right;
+}

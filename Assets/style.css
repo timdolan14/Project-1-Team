@@ -1,15 +1,19 @@
 * {
-    background-color: black;
-    color: aqua;
+    background-color: rgb(243, 243, 243);
     margin: 0;
     padding: 0;
 }
 
-.nav {  
+/* .nav {  
       display: inline;
-} 
+}  */
 
-.nav li {
+body {
+    background-color:  rgb(243, 243, 243);
+
+}
+
+/* .nav li {
     float: left;
     list-style-type: none;
     position: relative;
@@ -18,19 +22,19 @@
 
 .nav li a {
     font-size: 20px;
-    color: white;
+    color: black;
     display: block;
     line-height: 55px; 
     padding: 0px 20px ; 
     text-decoration: none; 
     font-family: 'Crimson Text', serif;
-}
+} */
 
 /* .nav li a:hover{
     background-color: rgb(158, 157, 157);
 } */
  
-#search_text{
+#search_text {
     width: 200px;
     padding: 15px 0 15px 20px;
     font-size: 16px;
@@ -44,8 +48,8 @@
     float:left;
     box-sizing: border-box;
 }
-
-#search_button {
+/* 
+.btn {
     border: 0 none;
     background: white url(./images/icons8-google-web-search-50.png) center no-repeat; 
     width: 60px;
@@ -53,25 +57,30 @@
     padding: 0;
     text-align: center;
     height: 52px;
-    
-}
+    border: 2px solid black;
+} */
 
 #option a{
     border-left: 0 none;
 }
-
+/* 
 .subnav {
     visibility: hidden;
     position: absolute; 
     right: 0;
-}
-.subnav li {
-    float: none;
-}
+} */
 
-#options:hover .subnav{
+/* .subnav li {
+    float: none;
+} */
+
+/* #options:hover .subnav{
     visibility: visible;
     top: 100%;
    
+} */
+
+.results {
+    border: 2px solid black;
 }
 

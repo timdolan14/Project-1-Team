@@ -34,7 +34,7 @@ const options = {
 })
 }
  // })
-//})
+//})/
 ///Tasty api
 const option = {
   method: 'GET',

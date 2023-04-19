@@ -1,6 +1,17 @@
-console.log ("text");
+///Vars and QuerySelectors
+var searchBtn = document.querySelector('.btn')
+searchBtn.addEventListener('click',yelpApi)
+var searchInput = document.querySelector('.search-bar').value
 
 
+
+
+
+
+
+
+function yelpApi(){
+////Yelp api
 const options = {
     
     method: 'GET',
@@ -11,21 +22,60 @@ const options = {
     
   };
   
-  fetch('https://cors-anywhere-jung.herokuapp.com/' + 'https://api.yelp.com/v3/businesses/search?location=NYC&sort_by=best_match&limit=20', options)
-    .then(response => response.json())
-    .then(response => console.log(response))
-    .catch(err => console.error(err));
+  fetch('https://cors-anywhere-jung.herokuapp.com/' + 'https://api.yelp.com/v3/businesses/search?location=NYC&sort_by=best_match&limit=15', options)
+  .then (function (response) {
+    return response.json();
+})
+.then (function (data) {
+    displaySearch(data);
+    // function displaySearch(data){
+    // for(var i = 0 ;i < data.length;i++){
+     
+})
+}
+ // })
+//})/
+///Tasty api
+const option = {
+  method: 'GET',
+  headers: {
+    'X-RapidAPI-Key': '90ac447eabmsh4bf5f842aaa5395p1c6541jsn2d0820a0c05f',
+    'X-RapidAPI-Host': 'tasty.p.rapidapi.com'
+  }
+};
+fetch('https://tasty.p.rapidapi.com/recipes/auto-complete?prefix=pizza', option)
+  .then(response => response.json())
+  .then(response => console.log(response))
+  .catch(err => console.error(err));
+  console.log("tasty");
 
 
-    var recipes = 'https://api.spoonacular.com/recipes/complexSearch?query=pasta&apiKey=1b75e20facc84590ba826c63864d26c8'
+   //Function for search event listioner
+     function displaySearch(results){
+    console.log(results)
+      for(var i = 0 ;i < results.businesses.length;i++){
+        console.log('hi')
+       var businessname = results.businesses[i].name
+        var tableRowEL = document.createElement('tr');
+       var number = document.createElement('th');
+       var listEL = document.createElement('th');
+       var information = document.createElement('th');
+        var alais = results.businesses[i].alais
+       var mainTable = document.querySelector('.DTable')
+       
+      //  //Adding text
+       number.textContent = "test"
+       listEL.innerHTML = businessname;
+       information.innerHTML = alais;
+       //Appending Childs
+       mainTable.appendChild(tableRowEL);
+       tableRowEL.appendChild(number);
+       tableRowEL.appendChild(listEL);
+       tableRowEL.appendChild(information);
+      
 
-    fetch (recipes)
-    .then (function (response) {
-        return response.json();
-    })
-    .then (function (data) {
-        console.log(data);
-    
-    })
 
-    
+      // }
+
+    }};
+     

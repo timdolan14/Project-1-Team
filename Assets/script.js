@@ -9,8 +9,11 @@ console.log(query.value);
 var searchBtn = document.querySelector('.btn')
 var searchInput = document.querySelector('.search-bar').value
 
+// Event listener for specifying whether to search in restaurants or in recipes
 searchBtn.addEventListener('click', function () {
   var recDD = document.querySelector('.form-select.options');
+  document.getElementById('results').style.display = "block";
+  
   if (recDD.value === 'Recipes') {
     recAPI(query.value);
     console.log("sear.che.d");
@@ -19,6 +22,7 @@ searchBtn.addEventListener('click', function () {
 
 searchBtn.addEventListener('click', function () {
   var recDD = document.querySelector('.form-select.options');
+  document.getElementById('results').style.display = "block";
   if (recDD.value === 'Restaurants') {
     yelpApi();
     displaySearch();

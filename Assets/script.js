@@ -13,7 +13,7 @@ searchBtn.addEventListener('click', function () {
   var recDD = document.querySelector('.form-select.options');
   if (recDD.value === 'Recipes') {
     recAPI(query.value);
-    console.log("searched");
+    console.log("sear.che.d");
   }
 });
 
@@ -22,7 +22,7 @@ searchBtn.addEventListener('click', function () {
   if (recDD.value === 'Restaurants') {
     yelpApi();
     displaySearch();
-    console.log("searched");
+    console.log("searc..hed");
   }
 });
 
@@ -61,9 +61,9 @@ function displaySearch(results) {
     var mainTable = document.querySelector('.DTable')
 
     //  //Adding text
-    number.textContent = "test"
+    number.textContent = results.businesses[i].rating + " (" + results.businesses[i].price + ")";
     listEL.innerHTML = businessname;
-    information.innerHTML = alais;
+    //information.innerHTML = alais;
     //Appending Childs
     mainTable.appendChild(tableRowEL);
     tableRowEL.appendChild(listEL);

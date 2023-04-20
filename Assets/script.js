@@ -61,9 +61,9 @@ function displaySearch(results) {
     var mainTable = document.querySelector('.DTable')
 
     //  //Adding text
-    number.textContent = "test"
+    number.textContent = results.businesses[i].rating + " (" + results.businesses[i].price + ")";
     listEL.innerHTML = businessname;
-    information.innerHTML = alais;
+    //information.innerHTML = alais;
     //Appending Childs
     mainTable.appendChild(tableRowEL);
     tableRowEL.appendChild(listEL);

@@ -2,7 +2,9 @@
 var searchBtn = document.querySelector('.btn')
 var searchInput = document.querySelector('.search-bar').value
 var mainTable = document.querySelector('.DTable')
-
+var searchFormEl = document.querySelector('#form-control.search-bar')
+var query = document.getElementById('search-query')
+console.log(query.value);
 
 var searchBtn = document.querySelector('.btn')
 var searchInput = document.querySelector('.search-bar').value
@@ -10,8 +12,7 @@ var searchInput = document.querySelector('.search-bar').value
 searchBtn.addEventListener('click', function () {
   var recDD = document.querySelector('.form-select.options');
   if (recDD.value === 'Recipes') {
-    recAPI();
-    recDisplay();
+    recAPI(query.value);
     console.log("searched");
   }
 });
@@ -43,9 +44,6 @@ function yelpApi() {
     })
     .then(function (data) {
       displaySearch(data);
-      // function displaySearch(data){
-      // for(var i = 0 ;i < data.length;i++){
-
     })
 }
 
@@ -75,13 +73,11 @@ function displaySearch(results) {
   }
 };
 
-
 function recAPI() {
-  var query = 'italian wedding soup'
   $.ajax({
     method: 'GET',
-    url: 'https://api.api-ninjas.com/v1/recipe?query=' + query,
-    headers: { 'X-Api-Key': 'K2M3IQMADo5gi254OAuRjQ==js2mVYSqmriRRajW' },
+    url: 'https://api.api-ninjas.com/v1/recipe?query=' + query.value,
+    headers: { 'X-Api-Key': 'F5CKn12AgwSZC8GGz3tjjhcXV003W8UbygRaxbTu' },
     contentType: 'application/json',
     success: function (result) {
       recDisplay(result);
@@ -97,19 +93,17 @@ function recDisplay(response) {
   for (var i = 0; i < response.length; i++) {
     console.log('one time')
     var recName = response[i].title;
-    var tableRowEL = document.createElement('tr');
-    var number = document.createElement('th');
-    var listEL = document.createElement('th');
-    var resultTextEl = document.createElement('th');
     var info = response[i].servings;
+    var content = `
+        <tr>
+         <th>
+          ${response[i].title}
+         </th>
+         <th>
+         ${response[i].servings}
+        </th>
+        </tr>`
     //  //Adding text
-    number.textContent = recName;
-    listEL.innerHTML = "Number";
-    resultTextEl.innerHTML = info;
-    //Appending Childs
-    mainTable.appendChild(tableRowEL);
-    tableRowEL.appendChild(listEL);
-    tableRowEL.appendChild(number);
-    tableRowEL.appendChild(resultTextEl);
+    mainTable.innerHTML += content
   }
 };

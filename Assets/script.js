@@ -4,12 +4,6 @@ searchBtn.addEventListener('click',yelpApi)
 var searchInput = document.querySelector('.search-bar').value
 
 
-
-
-
-
-
-
 function yelpApi(){
 ////Yelp api
 const options = {
@@ -79,3 +73,59 @@ fetch('https://tasty.p.rapidapi.com/recipes/auto-complete?prefix=pizza', option)
 
     }};
      
+
+    function recAPI (){
+      var query = 'italian wedding soup'
+      $.ajax({
+          method: 'GET',
+          url: 'https://api.api-ninjas.com/v1/recipe?query=' + query,
+          headers: { 'X-Api-Key': 'K2M3IQMADo5gi254OAuRjQ==js2mVYSqmriRRajW'},
+          contentType: 'application/json',
+          success: function(result) {
+              console.log(result);
+          },
+          error: function ajaxError(jqXHR) {
+              console.error('Error: ', jqXHR.responseText);
+          }
+        });
+      }
+          recAPI (console.log("recAPI"));
+
+          var searchBtn = document.querySelector('.btn')
+// searchBtn.addEventListener('click', yelpApi)
+var searchInput = document.querySelector('.search-bar').value
+
+searchBtn.addEventListener('click', function () {
+  var recDD = document.querySelector('.form-select.options');
+  if (recDD.value === 'Recipes') {
+    recAPI();
+    console.log("searched");
+  }
+});
+
+
+function displaySearch(response) {
+  console.log(response)
+  for (var i = 0; i < response.length; i++) {
+    console.log('one time')
+    var recName = results.title[i].name;
+    var tableRowEL = document.createElement('tr');
+    var number = document.createElement('th');
+    var listEL = document.createElement('th');
+    var ingredients = document.createElement('th');
+    var recName = response.response[i].display
+    var resultTextEl = document.querySelector('#result-text');
+    // var resultContentEl = document.querySelector('#result-content');
+    //  //Adding text
+    number.textContent = "text"
+    listEL.innerHTML = recName;
+    ingredients.innerHTML = resultTextEl;
+    //Appending Childs
+    mainTable.appendChild(tableRowEL);
+    tableRowEL.appendChild(number);
+    tableRowEL.appendChild(listEL);
+    tableRowEL.appendChild(info);
+  }
+};
+
+displaySearch();

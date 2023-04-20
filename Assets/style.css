@@ -83,3 +83,15 @@ section {
 .card {
     border: 3px solid rgba(38, 85, 46, 0.781);
 }
+
+footer {
+    background-color: rgba(38, 85, 46, 0.712);
+    font-family: 'Kanit', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer p {
+    font-size: 25px;
+}

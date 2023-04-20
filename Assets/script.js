@@ -111,3 +111,15 @@ function recDisplay(response) {
     mainTable.innerHTML += content
   }
 };
+
+// localStorage for previous searches
+searchBtn.addEventListener('click', function () {
+  var savedSearches = document.getElementById('search-query').value;
+  localStorage.setItem('searches', JSON.stringify(savedSearches));
+})
+
+var searchList = localStorage.getItem('searches');
+document.getElementById('search1').innterHTML = searchList;
+
+var searchItem = JSON.parse(localStorage.getItem("searches"))
+$("#search1").text(searchItem);

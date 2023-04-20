@@ -22,7 +22,7 @@ searchBtn.addEventListener('click', function () {
   if (recDD.value === 'Restaurants') {
     yelpApi();
     displaySearch();
-    console.log("searched");
+    console.log("searc.hed");
   }
 });
 

@@ -36,11 +36,11 @@ To review this Site Creation, you can review the notes in each section. Open the
 
 ## Deployed URL
 
-[Restaurants & Recipes] (https://timdolan14.github.io/Restaurants-and-Recipes/) 
+https://timdolan14.github.io/Restaurants-and-Recipes/
 
 ## Github Repo
 
-[GitHub] (https://github.com/timdolan14/Restaurants-and-Recipes)
+https://github.com/timdolan14/Restaurants-and-Recipes
 
 ## Group Presentation 
 [Google Slides](https://docs.google.com/presentation/d/1IZzhYuBtBhhLbr7KKr_VHl9eSFKKwpIwBlNStQcJ4Kw/edit#slide=id.gcb9a0b074_1_0)

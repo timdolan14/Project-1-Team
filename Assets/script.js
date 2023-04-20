@@ -13,7 +13,7 @@ searchBtn.addEventListener('click', function () {
   var recDD = document.querySelector('.form-select.options');
   if (recDD.value === 'Recipes') {
     recAPI(query.value);
-    console.log("searche.d");
+    console.log("sear.che.d");
   }
 });
 

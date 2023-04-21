@@ -30,6 +30,7 @@ searchBtn.addEventListener('click', function () {
   }
 });
 
+
 function yelpApi() {
   ////Yelp api
   const options = {
@@ -42,7 +43,7 @@ function yelpApi() {
 
   };
 
-  fetch('https://cors-anywhere-jung.herokuapp.com/' + 'https://api.yelp.com/v3/businesses/search?location=NYC&sort_by=best_match&limit=15', options)
+  fetch('https://cors-anywhere-jung.herokuapp.com/' + 'https://api.yelp.com/v3/businesses/search?location=ATL&sort_by=best_match&limit=15', options)
     .then(function (response) {
       return response.json();
     })
